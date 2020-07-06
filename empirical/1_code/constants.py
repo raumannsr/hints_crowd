@@ -1,3 +1,4 @@
+import enum
 TRIAL = False
 SANITY_CHECK = False
 VERBOSE = True
@@ -19,7 +20,11 @@ else:
     STEPS_PER_EPOCH_MODEL_2 = 40
     EPOCHS_MODEL_2 = 60
     seeds = [1970, 1972, 2008, 2019, 2020]
-
+class ensemble_learning_type(enum.Enum):
+    soft_voting = 1
+    averaging = 2
+    optimizing = 3
+ENSEMBLE_LEARNING = ensemble_learning_type.optimizing
 
 def print_constants():
     print('*************************************************************')
